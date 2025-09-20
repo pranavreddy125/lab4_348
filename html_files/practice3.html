@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Practice 3 – Password Check</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    input { margin: .5rem 0; padding: .4rem; }
+    button { margin-top: 1rem; padding: .4rem .8rem; }
+  </style>
+</head>
+<body>
+  <h1>Practice 3 – Password Verification</h1>
+
+  <p>Enter password twice:</p>
+  <input id="pw1" type="text"><br>
+  <input id="pw2" type="text"><br>
+  <button onclick="check()">Verify</button>
+
+  <script>
+    function check() {
+      let p1 = document.getElementById("pw1").value;
+      let p2 = document.getElementById("pw2").value;
+
+      if (p1.length < 8 || p2.length < 8) {
+        alert("Password must be at least 8 characters.");
+      } else if (p1 !== p2) {
+        alert("Passwords do not match.");
+      } else {
+        alert("Passwords match!");
+      }
+    }
+  </script>
+</body>
+</html>

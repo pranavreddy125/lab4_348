@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Practice 2 – CSS Control</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    #text {
+      padding: 1rem;
+      border: 2px solid black;
+      border-radius: 6px;
+      max-width: 500px;
+    }
+    label { display: inline-block; width: 80px; }
+    input { width: 60px; margin-right: 10px; }
+    button { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Practice 2 – CSS Control</h1>
+
+  <p id="text">This text will change color when you fill in the text field below.</p>
+
+  <div>
+    <label for="r">R (0–255):</label>
+    <input id="r" type="number" min="0" max="255" value="0"><br>
+
+    <label for="g">G (0–255):</label>
+    <input id="g" type="number" min="0" max="255" value="0"><br>
+
+    <label for="b">B (0–255):</label>
+    <input id="b" type="number" min="0" max="255" value="0"><br>
+
+    <label for="bw">Border (px):</label>
+    <input id="bw" type="number" min="0" max="20" value="2"><br>
+
+    <button onclick="applyStyle()">Apply</button>
+  </div>
+
+  <script>
+    function applyStyle() {
+      let r = document.getElementById("r").value;
+      let g = document.getElementById("g").value;
+      let b = document.getElementById("b").value;
+      let bw = document.getElementById("bw").value;
+
+      let color = "rgb(" + r + "," + g + "," + b + ")";
+      let text = document.getElementById("text");
+
+      text.style.color = color;
+      text.style.borderColor = color;
+      text.style.borderWidth = bw + "px";
+    }
+  </script>
+</body>
+</html>
